@@ -129,6 +129,57 @@
     color: var(--bg);
   }
 
+  /* STAGE IMAGE */
+  .stage-image-wrap {
+    padding: 0 0 52px;
+  }
+
+  .stage-image {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background: var(--bg-2);
+  }
+
+  .stage-image img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: 50% 24%;
+    filter: saturate(0.9) contrast(1.04);
+  }
+
+  .stage-image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(15, 8, 8, 0.76), transparent 44%);
+    pointer-events: none;
+  }
+
+  .stage-caption {
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    bottom: 18px;
+    z-index: 1;
+    font-size: 12px;
+    line-height: 1.5;
+    color: rgba(240, 235, 227, 0.72);
+  }
+
+  .stage-caption strong {
+    display: block;
+    font-family: var(--serif);
+    font-size: 21px;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 1.15;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+
   /* SECTION BASE */
   .section {
     padding: 52px 0;
@@ -341,6 +392,43 @@
     top: 2px;
   }
 
+  /* REVIEWS */
+  .reviews-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 24px;
+  }
+
+  .review-card {
+    border: 1px solid var(--line);
+    padding: 20px;
+    background: rgba(240, 235, 227, 0.025);
+  }
+
+  .review-stars {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    color: var(--gold-light);
+    margin-bottom: 10px;
+  }
+
+  .review-text {
+    font-family: var(--serif);
+    font-size: 18px;
+    font-style: italic;
+    line-height: 1.45;
+    color: var(--text);
+    margin-bottom: 12px;
+  }
+
+  .review-author {
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
   /* QUOTE */
   .quote-section {
     padding: 52px 0;
@@ -506,6 +594,17 @@
     <a href="#cta" class="hero-cta">Написать «Голос»</a>
   </section>
 
+  <!-- STAGE IMAGE -->
+  <section class="stage-image-wrap" aria-label="Светлана Клевер на сцене">
+    <figure class="stage-image">
+      <img src="assets/svetlana-stage.jpg" alt="Светлана Клевер поёт на сцене с микрофоном">
+      <figcaption class="stage-caption">
+        <strong>Действующая певица.</strong>
+        Ведёт к сцене не из теории, а из собственного живого опыта.
+      </figcaption>
+    </figure>
+  </section>
+
   <!-- WHO -->
   <section class="section">
     <span class="section-tag">Для кого</span>
@@ -590,6 +689,29 @@
         <li>Видеозапись твоего концерта</li>
         <li>Офлайн в Сочи или онлайн</li>
       </ul>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="section" id="reviews">
+    <span class="section-tag">Отзывы</span>
+    <h2 class="section-title">Голос раскрывается, когда рядом спокойно.</h2>
+    <div class="reviews-list">
+      <article class="review-card">
+        <p class="review-stars">★★★★★</p>
+        <p class="review-text">«Светлана просто идеально подошла мне, и я занимаюсь с огромным удовольствием. Всем рекомендую.»</p>
+        <p class="review-author">Ксения · Яндекс Карты</p>
+      </article>
+      <article class="review-card">
+        <p class="review-stars">★★★★★</p>
+        <p class="review-text">«Всё объясняет понятно, без лишней воды. Занятия проходят комфортно, а главное — есть реальный результат.»</p>
+        <p class="review-author">Ольга Цветкова · Яндекс Карты</p>
+      </article>
+      <article class="review-card">
+        <p class="review-stars">★★★★★</p>
+        <p class="review-text">«Единственная из всех педагогов, кто сумела объяснить правильную технику. Звук стал сильнее, красивее, петь уже не стыдно.»</p>
+        <p class="review-author">Ольга Чегодаева · Яндекс Карты</p>
+      </article>
     </div>
   </section>
 
